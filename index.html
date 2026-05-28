@@ -1,39 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Weather App</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Weather App</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
+
 <body>
 
-    <div class="container">
-        <h2>Advanced Weather App</h2>
+    <!-- Dark Mode Button -->
+    <button id="theme-btn" class="theme-btn">
+        <i class="fa-solid fa-moon"></i>
+    </button>
 
-        <div class="search-box">
-            <input type="text" id="city" placeholder="Enter city name">
-            <button onclick="getWeather()">Search</button>
+    <div class="container glass-card">
+
+        <!-- Heading -->
+        <h1>🌤️ Weather App</h1>
+
+        <!-- Date & Time -->
+        <div class="date-time">
+            <p id="current-date"></p>
+            <p id="current-time"></p>
         </div>
 
+        <!-- Search Box -->
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="city"
+                placeholder="Enter city name..."
+            />
+
+            <button id="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <!-- Location Button -->
+            <button id="location-btn">
+                <i class="fa-solid fa-location-dot"></i>
+            </button>
+
+        </div>
+
+        <!-- Error -->
+        <p id="error" class="error hidden"></p>
+
+        <!-- Loading -->
+        <div id="loading" class="loading hidden">
+            <div class="loader"></div>
+            <p>Fetching Weather...</p>
+        </div>
+
+        <!-- Weather Box -->
         <div id="weather-box" class="weather hidden">
-            <h3 id="city-name"></h3>
+
+            <h2 id="city-name"></h2>
+
             <img id="weather-icon" class="icon" />
 
-            <p id="temperature"></p>
+            <h1 id="temperature"></h1>
+
             <p id="description"></p>
 
+            <!-- Weather Details -->
             <div class="details">
-                <p id="humidity"></p>
-                <p id="wind"></p>
+
+                <div class="detail-card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <p id="humidity"></p>
+                </div>
+
+                <div class="detail-card">
+                    <i class="fa-solid fa-wind"></i>
+                    <p id="wind"></p>
+                </div>
+
             </div>
+
         </div>
 
-        <h3 class="forecast-title hidden">5-Day Forecast</h3>
+        <!-- Forecast -->
+        <h3 class="forecast-title hidden">
+            5-Day Forecast
+        </h3>
+
         <div id="forecast" class="forecast hidden"></div>
 
     </div>
 
     <script src="scripts.js"></script>
+
 </body>
 </html>
